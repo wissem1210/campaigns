@@ -1,0 +1,44 @@
+<div *ngIf="campaigns$ | async as campaign; else loading" class="title">
+    <h1>CAMPAIGNS</h1>
+    <span>{{ campaign.total }}</span>
+</div>
+<div>Search : <input [(ngModel)]="input" type="text" (ngModelChange)="onSearchInputChange($event)" /></div>
+<div *ngIf="campaigns$ | async as campaign; else loading">
+    <ul class="paginator">
+        <li class="page-indicator" *ngFor="let page of totalPages" [value]="page" (click)="onPageChange($event.target.value)">
+            {{page}}
+        </li>
+    </ul>
+    <table>
+        <thead>
+            <th></th>
+            <th (click)="onSort($event.target.textContent)">Name</th>
+            <th (click)="onSort($event.target.textContent)">Duration</th>
+            <th (click)="onSort($event.target.textContent)">Status</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of campaign.data">
+                <td class="campaign-img-cover" [ngStyle]="{ 'background-image': 'url(' + c.img + ')'}"></td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.duration }}</td>
+                <td>{{ c.status }}</td>
+                <td><button class="rounded-btn fullw">view Report</button></td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <ul class="paginator">
+        <li class="page-indicator" *ngFor="let page of totalPages" [value]="page" (click)="onPageChange($event.target.value)">
+            {{page}}
+        </li>
+    </ul>
+
+    <h1 *ngIf="campaign['total_pages'] < 1">No Records</h1>
+</div>
+
+
+<ng-template #loading>
+    loading...
+</ng-template>

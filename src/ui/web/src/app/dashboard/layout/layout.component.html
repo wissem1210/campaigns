@@ -1,0 +1,45 @@
+<ng-sidebar-container>
+
+    <!-- A sidebar -->
+    <ng-sidebar [(opened)]="_opened" [mode]="'push'">
+        <div class="side-menu">
+            <ul class="wrapper">
+                <li *ngFor="let item of nav">
+                    <div>{{ item.name }}</div>
+                </li>
+            </ul>
+        </div>
+    </ng-sidebar>
+
+    <!-- Page content -->
+    <div ng-sidebar-content>
+        <div class="container">
+            <header>
+                <nav *ngIf="user$ | async as u; else loading">
+                    <div class="wrapper d-flex">
+                        <div class="brand d-flex">
+                            <i class="fas fa-bars" (click)="_toggleSidebar()"></i>
+                            <h1>DECISIONS</h1>
+                        </div>
+                        <div class="toolbar d-flex">
+                            <div class="avatar">
+                                <img [src]="u.avatar" width="52px" />
+                            </div>
+                            <div class="rounded-btn" (click)="auth.logout()">Log out</div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <div class="wrapper">
+                    <app-campaign-table></app-campaign-table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</ng-sidebar-container>
+
+<ng-template #loading>
+    loading...
+</ng-template>

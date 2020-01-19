@@ -1,0 +1,54 @@
+:host {
+  position: relative;
+  ng-sidebar-container {
+    margin-top: 4rem;
+    background: whitesmoke;
+    height: 90vh;
+  }
+}
+main {
+  .wrapper {
+    padding: 1rem;
+  }
+}
+
+.side-menu {
+  .wrapper {
+    list-style: none;
+    li {
+      padding: 14px;
+    }
+  }
+}
+
+header {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+  nav {
+    width: 90%;
+    margin: auto;
+    padding: 0.5;
+    .wrapper {
+      .brand {
+        flex: 1;
+      }
+      .toolbar {
+        .rounded-btn {
+          padding: 4px 14px;
+          background-color: whitesmoke;
+          margin: 0 8px;
+          &:hover{
+            background: gray;
+          }
+        }
+        img {
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+}

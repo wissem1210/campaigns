@@ -1,0 +1,55 @@
+table {
+  position: relative;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  th{
+    cursor: pointer;
+  }
+  tr {
+    text-align: center;
+    td {
+      font-size: 14px;
+      background-color: white;
+      padding: 2rem;
+      &:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+      &:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+    }
+  }
+  .campaign-img-cover {
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+.paginator {
+  text-align: center;
+  list-style: none;
+  padding: 1rem;
+  .wrapper{
+    position: relative;
+    list-style-type: none;
+
+  }
+  .page-indicator {
+    cursor: pointer;
+    display:inline-block; 
+    padding: 0 10px;
+    margin: 0 8px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px rgba($color: #000000, $alpha: 0.1);
+  }
+}
+.title {
+  h1 {
+    margin-right: 12px;
+  }
+  display: flex;
+  align-items: baseline;
+}
