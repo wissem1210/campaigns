@@ -20,7 +20,7 @@ import { AngularFontAwesomeModule } from "angular-font-awesome";
   providers: [
     {
       provide: "API_URL",
-      useValue: "https://b40eee89.ngrok.io/api/"
+      useValue: "http://localhost:3000/api/"
     }
   ],
   bootstrap: [AppComponent]
